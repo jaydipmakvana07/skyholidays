@@ -1,0 +1,235 @@
+
+.hotel {
+    width: 100%;
+    padding: 2rem 0;
+  }
+  
+  .title {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .title h1 {
+    font-size: 1.8rem;
+  }
+  
+ 
+ 
+.SearchBarContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Align items to the right */
+  border-radius: 30px; /* Adjust roundness as needed */
+  background-color: #f2f2f2; /* Set background color */
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 20px;
+  padding-right: 5px; /* Add padding for spacing */
+  width: 40%; /* Adjust width to fit content */
+  margin: 20px auto;
+}
+
+
+
+.hotelsearchButton {
+  background: transparent !important;
+  border: none!important;
+  cursor: pointer !important;
+}
+
+/* CSS for the search button */
+.hotelsearchButton {
+  /* Add styles to customize the appearance of the search button */
+  background-color: rgb(243, 111, 9) !important;/* Set background color */
+  color: #fff !important; /* Set text color */
+  border: 1px solid rgb(243, 111, 9) !important; /* Remove border */
+  border-radius: 40px !important; /* Add border radius for rounded corners */
+   padding: 10px !important;
+   margin-left: 20px!important;/* Add padding for spacing */
+  cursor: pointer !important; /* Show pointer cursor on hover */
+  transition: background-color 0.3s ease !important; 
+  margin: 0 0!important; /* Add transition for smooth hover effect */
+}
+
+.hotelsearchButton .MuiSvgIcon-root {
+  font-size: 25px; 
+  /* Set the size of the icon */
+}
+.hotelsearchButton:hover {
+  background-color: #f2f2f2 !important;
+  color: rgb(243, 111, 9) !important; /* Change background color on hover */
+}
+
+.icon img {
+  width: 3rem; /* Adjust width as needed */
+  height: 3rem;
+  margin-right: 2px; 
+  margin-left: 2px;/* Adjust height as needed */
+   /* Add padding for spacing */
+}
+.icon{
+  
+  align-items: right;
+  display: flex; /* Assuming .icon is within a flex container */
+  justify-content: flex-end; 
+}
+/* Autocomplete styles */
+.MuiAutocomplete-root {
+  width: 100%;
+  margin-bottom: 5px; 
+  margin-left: 10px;
+}
+
+.MuiAutocomplete-inputRoot {
+  width: 100%;
+  
+ 
+}
+
+
+  
+  .hotelBox {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding: 2rem 0;
+  }
+  
+  .box {
+    padding: 1rem;
+    background-color: aliceblue;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    transition: 0.3s ease-in-out;
+    box-shadow: rgb(0, 0, 0, 0.1) 0px 10px 15px 0px;
+    cursor: pointer;
+  }
+  
+  .box:hover {
+    transform: translateX(0.5rem) translateY(-0.5rem);
+    box-shadow: rgb(0, 0, 0, 0.3) 0px 10px 10px 0px;
+  }
+  
+  .box:hover .image img {
+    transform: scale(115%);
+  }
+  
+  .image {
+    width: 100%; /* Set the width to 100% of its container */
+    max-width: 570px; /* Set the maximum width to maintain aspect ratio */
+    padding-top: 72.982%; /* Set the padding-top to maintain the aspect ratio (416/570 * 100%) */
+    position: relative; /* Ensure the container maintains its aspect ratio */
+    overflow: hidden;
+    border-radius: 10px;
+  }
+  
+  .image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.3s ease-in-out;
+  }
+  
+  .box p {
+    font-size: 0.9rem;
+  }
+  
+  .hotelprice {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+  }
+  
+  .hotelprice img {
+    width: 2rem;
+    height: 2rem;
+    
+    margin-right: 0.7rem;
+    
+    color: rgb(89, 8, 8);
+  }
+  
+  .price p {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: rgb(236, 104, 4);
+  }
+  .hotelprice p {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: rgb(236, 104, 4);
+  }
+  
+  .details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .details p {
+    font-size: 0.8rem;
+  }
+  .link{
+    
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit color from parent */
+  
+  }
+  .viewMoreButtonContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin: 20px auto;
+  }
+  
+  .viewMoreButton {
+    padding: 10px 20px;
+    background-color: rgb(236, 104, 4);
+    color: #fff;
+    border: 1px solid rgb(236, 104, 4);
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .viewMoreButton:hover {
+    background-color: #ffffff;
+    color: rgb(236, 104, 4);
+  }
+  
+  /* responsive section */
+  
+  @media screen and (max-width: 450px) {
+    .hotel {
+      padding: 2rem 1rem;
+    }
+  
+    .CategoryBar ul {
+      gap: 0.5rem;
+    }
+    .SearchBarContainer {
+       /* Add padding for spacing */
+      width: 90%; /* Adjust width to fit content */
+      
+    }
+  
+    .hotelBox {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 2rem;
+    }
+    .hotelprice img {
+      width: 1.8rem;
+      height: 1.8rem;
+      
+      margin-right: 0.7rem;
+      
+      color: rgb(89, 8, 8);
+    }
+  }
+  

@@ -1,0 +1,206 @@
+
+.main-container {
+  width: 100%;
+}
+
+
+
+.right-side {
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.right-content {
+  height: calc(100vh - 64px); /* Adjust 64px according to your layout */
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+
+
+/* Add any other styles you need */
+
+
+/* Add any other styles you need */
+
+
+
+  
+.singlepackage {
+    width: 100%;
+    padding: 2rem 0;
+  }
+  
+  .title {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .title h1 {
+    font-size: 1.8rem;
+  }
+  
+  
+  .singlepackageBox {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+    padding: 2rem 0;
+  }
+  
+  .singlebox {
+    padding: 1rem;
+    background-color: aliceblue;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    transition: 0.3s ease-in-out;
+    box-shadow: rgb(0, 0, 0, 0.1) 0px 10px 15px 0px;
+    cursor: pointer;
+  }
+  
+  .singlebox:hover {
+    transform: translateX(0.5rem) translateY(-0.5rem);
+    box-shadow: rgb(0, 0, 0, 0.3) 0px 10px 10px 0px;
+  }
+  
+  .singlebox:hover .image img {
+    transform: scale(115%);
+  }
+  
+  .singleimage {
+    width: 100%; /* Set the width to 100% of its container */
+    max-width: 570px; /* Set the maximum width to maintain aspect ratio */
+    padding-top: 72.982%; /* Set the padding-top to maintain the aspect ratio (416/570 * 100%) */
+    position: relative; /* Ensure the container maintains its aspect ratio */
+    overflow: hidden;
+    border-radius: 10px;
+  }
+  
+  .singleimage img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.3s ease-in-out;
+  }
+  
+  .singlebox p {
+    font-size: 0.9rem;
+  }
+  
+  .hotelprice {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+  }
+  
+  .hotelprice img {
+    width: 2rem;
+    height: 2rem;
+    
+    margin-right: 0.7rem;
+    
+    color: rgb(89, 8, 8);
+  }
+  
+  .price p {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: rgb(236, 104, 4);
+  }
+  .hotelprice p {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: rgb(236, 104, 4);
+  }
+  
+  .details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .details p {
+    font-size: 0.8rem;
+  }
+  .link{
+    
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit color from parent */
+  
+  }
+  .book-now-button {
+    padding: 0.7rem 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: rgb(243, 111, 9);
+    border-radius: 5px;
+    color: #ffff;
+    border: 1px solid rgb(243, 111, 9);
+    outline: none;
+    transition: color 0.2s ease-in-out;
+    cursor: pointer;
+    width: 100%;/* Add pointer cursor */
+    margin: 5px auto;
+  }
+  
+  .book-now-button:hover {
+    background-color: transparent;
+  color: rgb(243, 111, 9); /* Change background color on hover */
+  }
+  /* responsive section */
+  
+  @media screen and (max-width: 450px) {
+    .singlepackage {
+      padding: 2rem 1rem;
+    }
+  
+    .CategoryBar ul {
+      gap: 0.5rem;
+    }
+    .SearchBarContainer {
+       /* Add padding for spacing */
+      width: 90%; /* Adjust width to fit content */
+      
+    }
+  
+    .singleBox {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 2rem;
+    }
+    .hotelprice img {
+      width: 1.8rem;
+      height: 1.8rem;
+      
+      margin-right: 0.7rem;
+      
+      color: rgb(89, 8, 8);
+    }
+    /* Add this CSS */
+.main-container {
+  width: 100%;
+  display: flex; /* Make the container a flexbox */
+}
+
+.left-container {
+  flex: 0 0 auto; /* Set the left container to not grow or shrink */
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.right-container {
+  flex: 1; /* Let the right container grow to fill remaining space */
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.singlepackageBox {
+  position: static; /* Reset position */
+  top: auto; /* Reset top */
+  height: auto; /* Reset height */
+}
+
+    
+  }
+  

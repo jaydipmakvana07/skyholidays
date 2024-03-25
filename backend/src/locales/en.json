@@ -1,0 +1,205 @@
+{
+    "common": {
+        "default": "Failed to connect to the server!Please try again soon!",
+        "internalServerError": "Something went wrong, please try again after some time",
+        "unAuth": "Unauthorized User! Please login.",
+        "invalidAuthToken": "Invalid auth token provided.",
+        "invalidPagination": "Please provide valid pagination parameters!",
+        "joi": "Invalid details",
+        "invalidPagination": "Please provide valid pagination parameters!",
+        "fetchSuccess": "Fetch data successfully",
+        "notFound": "Page Not found",
+        "passwordError": "Password should have minimum 6 digit",
+        "invalidFile": "Please enter valid file upload type!",
+        "WrongPassword": "Old password is incorrect",
+        "login": "Congrats! You have Successfully logged in",
+        "logOut": "Log out successfully",
+        "invalidDetails": "input details invalid",
+        "invalidField": "You have entered wrong credential!",
+        "noData": "No data available",
+        "deleted": "Deleted successfully",
+        "updated": "Update successfully",
+        "invalidPassword": "Password should have a minimum length of 6!",
+        "requiredPassword": "Please provide password!",
+        "invalidEmail": "Please Provide valid email!",
+        "emailRequired": "Please provide email!",
+        "nameRequired": "Please provide name!",
+        "firstnameRequired": "Please provide first name!",
+        "lastnameRequired": "Please provide last name!",
+        "emailPasswordError": "Please provide email and password both",
+        "invalidLoginDetails": "Email or password incorrect",
+        "OTPSended": "OTP send successfully",
+        "emaiOtpRequired": "Please provide OTP!",
+        "invalidOTP": "OTP you have entered is invalid",
+        "requiredNewPassword": "Please provide new password!",
+        "passwordUpdateError": "Failed to update password, Please update again",
+        "invalidRequest": "You don't have authorization",
+        "permissionDenied": "You are not allowed to perform this action!",
+        "superAdminIdRequire": "Please provide id of super admin",
+        "PasswordRequired": "Please provide password!",
+        "wrongPassword": "Incorrect password!",
+        "signup": "user signup successfully!!"
+    },
+    "s3": {
+        "invalidImage": "Please provide valid image!",
+        "invalidImageType": "Please provide valid image type!",
+        "imageUploadError": "Error while uploading image!"
+    },
+    "admin": {
+        "logInSuccess": "Log in successfully",
+        "createSuccess": "Admin created successfully!",
+        "updateSuccess": "Admin details updated successfully!",
+        "getSuccess": "Admin details fetched successfully!",
+        "listSuccess": "Admin list fetched successfully!",
+        "emailExist": "Admin with same email already exist!",
+        "invalidLogInDetails": "Email or password is incorrect!",
+        "signinToken": "Sign in token generated successfully!",
+        "signinTokenExpired": "Sign in token is expired!",
+        "errorSigninToken": "Something went wrong while generating sign in token!",
+        "unAuthorised": "You don't have authorisation",
+        "mode": "Please provide valid mode",
+        "active": "professional is successfully active!!"
+    },
+    "user": {
+        "alreadyExists": "User with same email already exist!",
+        "unableToaction": "Something went wrong while creating/manipulating user!",
+        "registrationSuccess": "User registration successfull!",
+        "updateSuccess": "User updated successfully!",
+        "deleteSuccess": "User deleted successfully!!",
+        "getSuccess": "User fetched successfully!",
+        "loginSuccess": "User logged in successfully!",
+        "notExist": "User not exists!",
+        "socialIdError": "Please provide social auth!",
+        "updaedPassword": "user password updated successfully!!"
+    },
+    "master": {
+        "registrationSuccess": "Master registration successfully!!",
+        "deleteSuccess": "Master deleted successfully!!",
+        "updateSuccess": "Master details updated successfully!!",
+        "alreadyExists": "Master with same name already exist!",
+        "getSuccess": "Master fetched successfully!",
+        "loginSuccess": "Master logged in successfully!",
+        "notExist": "Master not exists!",
+        "socialIdError": "Please provide social auth!"
+    },
+    "subMaster": {
+        "registrationSuccess": "Sub Master registration successfully!!",
+        "deleteSuccess": "Sub Master deleted successfully!!",
+        "updateSuccess": "Sub Master details updated successfully!!",
+        "alreadyExists": "Sub Master with same name already exist!",
+        "getSuccess": "Sub Master fetched successfully!",
+        "loginSuccess": "Sub Master logged in successfully!",
+        "notExist": "Sub Master not exists!",
+        "socialIdError": "Please provide social auth!"
+    },
+    "role": {
+        "createSuccess": "Role created successfully!",
+        "updateSuccess": "Role updated successfully!",
+        "getSuccess": "Role fetched successfully!",
+        "deleteSuccess": "Role deleted successfully!",
+        "listSuccess": "Role list fetched successfully!",
+        "unableToAction": "Something went wrong while creating/manipulating role!",
+        "alreadyExists": "Role with same name already exist!",
+        "notExist": "Role not exists!"
+    },
+    "page": {
+        "createSuccess": "Page created successfully!",
+        "updateSuccess": "Page updated successfully!",
+        "getSuccess": "Page fetched successfully!",
+        "deleteSuccess": "Page deleted successfully!",
+        "listSuccess": "Page list fetched successfully!",
+        "unableToAction": "Something went wrong while creating/manipulating page!",
+        "alreadyExists": "Page with same name already exist!",
+        "notExist": "Page not exists!"
+    },
+    "permission": {
+        "createSuccess": "Permission created successfully!",
+        "updateSuccess": "Permission updated successfully!",
+        "getSuccess": "Permission fetched successfully!",
+        "deleteSuccess": "Permission deleted successfully!",
+        "listSuccess": "Permission list fetched successfully!",
+        "unableToAction": "Something went wrong while creating/manipulating permission!",
+        "alreadyExists": "Permission with same name already exist!",
+        "notExist": "Permission not exists!"
+    },
+    "subPage": {
+        "createSuccess": "sub-page created successfully!",
+        "bulkSuccess": "bulk-sub-page created successfully!",
+        "updateSuccess": "sub-page updated successfully!",
+        "getSuccess": "sub-page fetched successfully!",
+        "deleteSuccess": "sub-page deleted successfully!",
+        "listSuccess": "sub-page list fetched successfully!",
+        "unableToAction": "Something went wrong while creating/manipulating sub-page!",
+        "alreadyExists": "sub-page with same name already exist!",
+        "notExist": "sub-page not exists!"
+    },
+    "child": {
+        "created": "User profile created successfully!",
+        "isExist": "User profile with same name available Can you merge profile ?",
+        "update": "User profile updated successfully!",
+        "get": " User profile get successfully!!",
+        "merge": " User profile merge successfully!!",
+        "dashboard": " User dashboard count get successfully!!"
+    },
+    "religious": {
+        "created": "religious details created successfully!",
+        "updated": "religious details updated successfully"
+    },
+    "education": {
+        "created": "Education & Profession details created successfully!",
+        "updated": "Education & Profession details updated successfully!"
+    },
+    "appearance": {
+        "created": "Appearance details created successfully!",
+        "updated": "Appearance details updated successfully"
+    },
+    "familyDetails": {
+        "created": "Family details created successfully!",
+        "updated": "Family details updated successfully!"
+    },
+    "lifestyle": {
+        "created": "lifestyle details created successfully!",
+        "updated": "lifestyle details updated successfully!"
+    },
+    "criteria": {
+        "created": "matching criteria details created successfully!",
+        "updated": "matching criteria details updated successfully!"
+    },
+    "selfDetails": {
+        "created": "self details created successfully!",
+        "updated": "self details updated successfully!"
+    },
+    "parent": {
+        "created": "parent details created successfully!",
+        "get": " parent details get successfully!!",
+        "create_credentials": "handover to child from parent successfully"
+    },
+    "professional": {
+        "created": "professional details created successfully!",
+        "create_credentials": " handover to child from professioal successfully! ",
+        "parent_create_credentials": " handover to parent from professioal successfully",
+        "updated": "professional details update successfully!",
+        "get": "Professional list get successfully!!",
+        "getprofile": "Professional profile get successfully!!",
+        "image_updated": "image update successfully!!",
+        "star": "professional has been given a star successfully"
+    },
+    "references": {
+        "created": "member references details created successfully!",
+        "updated": "member references details update successfully!"
+    },
+    "preferences": {
+        "created": "member preferences details created successfully!",
+        "updated": "member preferences details update successfully!"
+    },
+    "locations": {
+        "created": "member locations details created successfully!",
+        "updated": "member locations details update successfully!"
+    },
+    "hotel": {
+        "create_hotel": "hotel created successfully!!",
+        "delete_hotel": " hotek is deleted successfully!!",
+        "get_hotel": "hotel get Successfully !!",
+        "update_hotel": "update hotel successfully !!"
+    }
+}

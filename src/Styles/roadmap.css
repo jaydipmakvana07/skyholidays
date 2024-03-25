@@ -1,0 +1,48 @@
+/* details.css */
+
+.centered-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    height: 100vh; 
+    margin-top: 1.2rem;/* Adjust this if necessary */
+  }
+  .h1-typography {
+    margin-top: 0.7rem;
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 0.7rem;
+    font-weight: bold;
+  }
+  
+  /* Icon color white, background color orange */
+  .MuiTimelineDot-root {
+    background-color: rgb(243, 111, 9)  !important; /* Update icon background color */
+    color: white !important;
+  }
+  
+  /* Timeline color orange */
+  .MuiTimelineConnector-root {
+    background-color: rgb(243, 111, 9)  !important; /* Update timeline color */
+  }
+  
+  /* Align "Day 1" and "Day 2" to the right with round orange backgrounds */
+ 
+  
+  /* Additional styles */
+ 
+  .MuiIconButton-root {
+    color: rgb(243, 111, 9)  !important; /* Update button color */
+  }  
+  .timeline-opposite-content {
+    color: rgb(243, 111, 9) ; /* Change color as desired */
+    margin-top: 2rem; 
+    font-weight: bold;/* Adjust margin as needed */
+  }
+  
+  /* Styles for TimelineContent */
+  .timeline-content {
+  /* Change color as desired */
+    margin-top: 1.5rem; /* Adjust margin as needed */
+  }
