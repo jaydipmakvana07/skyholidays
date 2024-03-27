@@ -15,7 +15,13 @@
     margin-bottom: 0.7rem;
     font-weight: bold;
   }
-  
+  .centered-container h5 {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+  }
   /* Icon color white, background color orange */
   .MuiTimelineDot-root {
     background-color: rgb(243, 111, 9)  !important; /* Update icon background color */
@@ -39,10 +45,24 @@
     color: rgb(243, 111, 9) ; /* Change color as desired */
     margin-top: 2rem; 
     font-weight: bold;/* Adjust margin as needed */
+    font-size: 1rem;
   }
   
   /* Styles for TimelineContent */
   .timeline-content {
   /* Change color as desired */
     margin-top: 1.5rem; /* Adjust margin as needed */
+  }
+
+  .city-container h6 {
+    font-weight: bold;
+    font-size: 1rem;
+  }
+  @media screen and (max-width: 450px) {
+    .centered-container h5 {
+      
+      font-size: 1.5rem;
+      
+    }
+    
   }

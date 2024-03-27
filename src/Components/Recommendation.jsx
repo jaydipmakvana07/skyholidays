@@ -2,22 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../Styles/Recommendation.css";
 import { Link } from "react-router-dom";
 
-import kerala from "../assets/kerala.jpg";
-import lax from "../assets/lax.jpg";
-import goa from "../assets/goa.jpg";
-import jammu from "../assets/jammu.jpg";
-import shimla from "../assets/shimla.jpg";
-import rajsthan from "../assets/rajsthan.jpg";
-import dubai from "../assets/dubai.jpg";
-import thailand from "../assets/thailand.jpg";
-import singapore from "../assets/singapore.jpg";
-import maldives from "../assets/maldives.jpg";
-import bali from "../assets/bali.jpg";
-import nepal from "../assets/nepal.jpg";
-import InternationalDestination1 from "../assets/Destination1.png";
-import InternationalDestination2 from "../assets/Destination2.png";
-import WeekendDestination1 from "../assets/Destination1.png";
-import WeekendDestination2 from "../assets/Destination2.png";
+
 import info1 from "../assets/plane04.png";
 import info2 from "../assets/dining.png";
 import info3 from "../assets/love.gif";
@@ -34,22 +19,22 @@ function Recommendation() {
     switch (index) {
       case 1:
         PackageService.getLatestPackages()
-          .then(response => setData(response.data))
+          .then(response => setData(response.data.data))
           .catch(error => console.error('Error fetching latest packages:', error));
         break;
       case 2:
         PackageService.getDomesticPackages()
-          .then(response => setData(response.data))
+          .then(response => setData(response.data.data))
           .catch(error => console.error('Error fetching domestic packages:', error));
         break;
       case 3:
         PackageService.getInternationalPackages()
-          .then(response => setData(response.data))
+          .then(response => setData(response.data.data))
           .catch(error => console.error('Error fetching international packages:', error));
         break;
       case 4:
         PackageService.getWeekendPackages()
-          .then(response => setData(response.data))
+          .then(response => setData(response.data.data))
           .catch(error => console.error('Error fetching weekend packages:', error));
         break;
       default:
@@ -61,7 +46,7 @@ function Recommendation() {
   useEffect(() => {
     // Set default category data when component mounts
     PackageService.getLatestPackages()
-      .then(response => setData(response.data))
+      .then(response => setData(response.data.data))
       .catch(error => console.error('Error fetching latest packages:', error));
   }, []); // Empty dependency array to run effect only once
 
@@ -94,9 +79,10 @@ function Recommendation() {
           </ul>
         </div>
       </div>
-      <Link  to={`/citypackage`} className="link" >
+      
       <div className="recommendationBox">
   {data && data.map((item, index) => (
+    <Link  to={`/citypackage/${item.title}`} className="link" >
     <div className="box" key={index}>
       <div className="image">
         <img src= {item.imgurl} alt="image" />
@@ -114,13 +100,14 @@ function Recommendation() {
       </div>
 
       <div className="details">
-        <p>{item.duration} and many more</p>
-        <p>per person</p>
+        <p>{item.duration}</p>
+        <p>PER PAX</p>
       </div>
     </div>
+    </Link>
   ))}
 </div>
-</Link>
+
     </section>
   );
 }

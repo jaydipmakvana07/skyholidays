@@ -18,8 +18,8 @@ function App() {
         
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/citypackage" element={<Citypackage />} />
-          <Route path="/packagedetails" element={<Packagedetails />} />
+          <Route path="/citypackage/:title" element={<Citypackage />} />
+          <Route path="/packagedetails/:sub_package_id" element={<Packagedetails />} />
          
         </Routes>
        

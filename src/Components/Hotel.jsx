@@ -17,8 +17,8 @@ function Hotel() {
   useEffect(() => {
     PackageService.getAllHotels()
       .then((response) => {
-        setData(response.data);
-        setFilteredData(response.data);
+        setData(response.data.data);
+        setFilteredData(response.data.data);
       })
       .catch((error) =>
         console.error("Error fetching latest packages:", error)
@@ -65,7 +65,7 @@ function Hotel() {
       <div className="hotelBox">
         {showAll ? (
           filteredData.map((item, index) => (
-            <Link to={`/service01`} className="link" key={index}>
+            
               <div className="box">
                 <div className="image">
                   <img src={item.imgurl} alt="image" />
@@ -81,15 +81,15 @@ function Hotel() {
                   <p>{item.price} ₹</p>
                 </div>
                 <div className="details">
-                  <p>DELUXE | ROYAL | NORMAL</p>
+                  <p>{item.roomtype}</p>
                   <p>1 Room | 2 Adults</p>
                 </div>
               </div>
-            </Link>
+         
           ))
         ) : (
           filteredData.slice(0, 3).map((item, index) => (
-            <Link to={`/service01`} className="link" key={index}>
+            
               <div className="box">
                 <div className="image">
                   <img src={item.imgurl} alt="image" />
@@ -105,11 +105,11 @@ function Hotel() {
                   <p>{item.price} ₹</p>
                 </div>
                 <div className="details">
-                  <p>DELUXE | ROYAL | NORMAL</p>
+                  <p>{item.roomtype}</p>
                   <p>1 Room | 2 Adults</p>
                 </div>
               </div>
-            </Link>
+            
           ))
         )}
       </div>

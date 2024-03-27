@@ -28,7 +28,7 @@ export const subpackageModel = (sequelize) => {
                 allowNull: false,
             },
             food: {
-                type: DataTypes.BOOLEAN,
+                type: DataTypes.INTEGER,
                 allowNull: false,
             },
             flight: {
@@ -40,7 +40,7 @@ export const subpackageModel = (sequelize) => {
                 allowNull: false,
             },
             package_includes: {
-                type: DataTypes.ARRAY(STRING),
+                type: DataTypes.ARRAY(DataTypes.STRING),
                 allowNull: true,
             },
             pacakge_details: {

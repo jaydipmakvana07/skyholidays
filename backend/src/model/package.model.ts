@@ -40,7 +40,7 @@ export const packageModel = (sequelize) => {
                 allowNull: false,
             },
             food: {
-                type: DataTypes.BOOLEAN,
+                type: DataTypes.INTEGER,
                 allowNull: false,
             },
             flight: {

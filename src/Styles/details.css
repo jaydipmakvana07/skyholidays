@@ -17,26 +17,40 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: 60%;
   }
-  
+
+  .package-detail-container h1{
+    
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 0.4rem;
+    font-weight: bold;
+  }
   .icon-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f0f0f0;
-    border-radius: 50%;
+    
     width: 40px;
     height: 40px;
     margin-right: 15px;
   }
-  
+  .image-icon  {
+  width: 2rem; /* Adjust width as needed */
+  height: 2rem;
+  margin-right: 2px; 
+  margin-left: 2px;/* Adjust height as needed */
+   /* Add padding for spacing */
+}
   .icon {
     color: rgb(236, 104, 4); /* Green color for the tick mark */
   }
   
-  .title {
-    margin-bottom: 10px;
+  .includes {
+    
     font-size: 1rem;
+    text-align: left;
   }
+
   
   .details {
     font-size: 1rem;
@@ -48,4 +62,10 @@
     
       width: 90%;
     }
+    .package-detail-container h1{
+    
+      font-size: 1.5rem;
+      
+    }
+    
   }

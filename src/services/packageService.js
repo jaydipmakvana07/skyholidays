@@ -12,12 +12,12 @@ class PackageService {
     }
 
     getDomesticPackages() {
-        const url = "http://localhost:5000/api/v1/auth/get-domestic-packages";
+        const url = "http://localhost:5000/api/v1/auth/get-domestic-packages/domestic";
         return axios.get(url);
     }
 
     getInternationalPackages() {
-        const url = "http://localhost:5000/api/v1/auth/get-domestic-packages";
+        const url = "http://localhost:5000/api/v1/auth/get-domestic-packages/international";
         return axios.get(url);
     }
 

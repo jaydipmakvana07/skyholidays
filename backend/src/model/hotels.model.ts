@@ -31,15 +31,15 @@ export const hotelModel = (sequelize) => {
                 allowNull: false,
             },
             is_ac: {
-                type: DataTypes.BOOLEAN,
+                type: DataTypes.INTEGER,
                 allowNull: false,
             },
             food: {
-                type: DataTypes.BOOLEAN,
+                type: DataTypes.INTEGER,
                 allowNull: false,
             },
             wifi: {
-                type: DataTypes.BOOLEAN,
+                type: DataTypes.INTEGER,
                 allowNull: false,
             },
         },

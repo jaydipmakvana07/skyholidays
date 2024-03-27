@@ -4,27 +4,30 @@ import { Link } from "react-router-dom";
 import info1 from "../assets/plane04.png";
 import info2 from "../assets/dining.png";
 import info3 from "../assets/love.gif";
-import PackageService from '../services/packageService';
+import PackageService from '../services/subpackageService';
+import { useParams } from 'react-router-dom';
 
 function Citypackage() {
   const [data, setData] = useState([]);
+  const { title } = useParams();
 
   useEffect(() => {
-    // Set default data when component mounts
-    PackageService.getAllPackages()
-      .then(response => setData(response.data.data)) // Extracting the array from 'data'
-      .catch(error => console.error('Error fetching latest packages:', error));
-  }, []);
+    // Fetch sub-packages when component mounts
+    PackageService.getSubpackages(title)
+      .then(response => setData(response.data.data))
+      .catch(error => console.error('Error fetching sub-packages:', error));
+  }, [title]); // Include 'title' in the dependency array
 
   return (
     <section id="recommendation" className="recommendation">
       <div className="title">
-        <h1>Our Packages</h1>
+        <h1>{title} Packages</h1>
       </div>
-      <Link to={`/packagedetails`} className="link">
-        <div className="recommendationBox">
-          {data && data.map((item, index) => (
-            <div className="box" key={index}>
+     
+      <div className="recommendationBox">
+        {data && data.map((item, index) => (
+          <Link to={`/packagedetails/${item.sub_package_id}`} className="link" key={index}>
+            <div className="box">
               <div className="image">
                 <img src={item.imgurl} alt="image" />
               </div>
@@ -34,20 +37,20 @@ function Citypackage() {
               <div className="hotelprice">
                 <div>
                   {item.flight === 1 && <img src={info1} alt="flight icon" />}
-                  {item.food && <img src={info2} alt="food icon" />} {/* Using item.food as it's a boolean */}
-                  {<img src={info3} alt="love icon" />}
+                  {item.food && <img src={info2} alt="food icon" />}
+                  <img src={info3} alt="love icon" />
                 </div>
                 <p>{item.cost} ₹</p>
               </div>
 
               <div className="details">
-                <p>{item.duration}</p> {/* Displaying duration from the data */}
+                <p>{item.duration}</p>
                 <p>PER PAX</p>
               </div>
             </div>
-          ))}
-        </div>
-      </Link>
+          </Link>
+        ))}
+      </div>
     </section>
   );
 }

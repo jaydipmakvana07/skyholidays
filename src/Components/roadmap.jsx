@@ -1,64 +1,83 @@
-import React, { useState } from 'react';
-import { Container, IconButton } from '@mui/material';
-import { Typography } from '@mui/material';
+import React, { useState, useEffect } from 'react';
+import { Container, IconButton, Typography } from '@mui/material';
 import { Timeline, TimelineItem, TimelineSeparator, TimelineConnector, TimelineContent, TimelineDot, TimelineOppositeContent } from '@mui/lab';
 import DriveEtaIcon from '@mui/icons-material/LocationOn';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import '../Styles/roadmap.css'; // Import the CSS file
+import PackageService from '../services/subpackageService';
+import { useParams } from 'react-router-dom';
 
 const RoadmapScreen = () => {
-  const tripDetails = [
-    { time: 'Day 01', activity: 'Eataaa' },
-    { time: 'Day 02', activity: 'Code' },
-    { time: 'Day 01', activity: 'Eat' },
-    { time: 'Day 02', activity: 'Code' },
-    { time: 'Day 01', activity: 'Eat' },
-    { time: 'Day 02', activity: 'Code' },
-    // Add more trip details as needed
-  ];
+  const [packageDetails, setPackageDetails] = useState([]);
+  const [showDescriptions, setShowDescriptions] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const { sub_package_id } = useParams();
 
-  // Initialize an array to track the visibility state of each description
-  const [showDescriptions, setShowDescriptions] = useState(new Array(tripDetails.length).fill(false));
+  useEffect(() => {
+    const fetchPackageDetails = async () => {
+      try {
+        const response = await PackageService.getSubpackageDetails(sub_package_id);
+        const data = response.data.data;
 
-  // Function to toggle the visibility of a specific description based on its index
+        if (data && data.length > 0) {
+          setPackageDetails(data[0].pacakge_details); // Assuming 'pacakge_details' is the correct property name
+          setShowDescriptions(Array(data[0].pacakge_details.length).fill(false));
+        } else {
+          setError('Package details not found');
+        }
+        setLoading(false);
+      } catch (error) {
+        console.error('Error fetching package details:', error);
+        setError('Error fetching package details');
+        setLoading(false);
+      }
+    };
+
+    fetchPackageDetails();
+  }, [sub_package_id]);
+
   const toggleDescription = (index) => {
     const updatedDescriptions = [...showDescriptions];
     updatedDescriptions[index] = !updatedDescriptions[index];
     setShowDescriptions(updatedDescriptions);
   };
 
+  if (loading) {
+    return <Typography>Loading...</Typography>;
+  }
+
+  if (error) {
+    return <Typography>{error}</Typography>;
+  }
+
   return (
     <Container maxWidth="md" className="centered-container">
-      <Typography variant="h5" className="h1-typography">
-         Trip Roadmap
+      <Typography variant="h5" >
+        Trip Roadmap
       </Typography>
       <Timeline>
-        
-        {tripDetails.map((detail, index) => (
+        {packageDetails.map((detail, index) => (
           <TimelineItem key={index}>
-            <TimelineOppositeContent  sx={{ marginY: '0.7rem' }}>
-              <Typography variant="text" className="timeline-opposite-content" >{detail.time}</Typography>
+            <TimelineOppositeContent sx={{ marginY: '0.5rem' }}>
+              <Typography variant="text" className="timeline-opposite-content">{detail.day}</Typography>
             </TimelineOppositeContent>
             <TimelineSeparator>
               <TimelineDot>
                 <DriveEtaIcon />
               </TimelineDot>
-              {index < tripDetails.length - 1 && <TimelineConnector />}
+              {index < packageDetails.length - 1 && <TimelineConnector />}
             </TimelineSeparator>
-            <TimelineContent sx={{ marginY: '0.5rem' } }className="timeline-content" >
+            <TimelineContent sx={{ marginY: '0.5rem' }} className="timeline-content">
               <div className="city-container">
-                <Typography variant="h6">{detail.activity}</Typography>
+                <Typography variant="h6">{detail.city}</Typography>
               </div>
-              {/* Icon buttons to toggle description visibility */}
               <IconButton onClick={() => toggleDescription(index)}>
                 {showDescriptions[index] ? <ExpandLessIcon /> : <ExpandMoreIcon />}
               </IconButton>
-              {/* Conditionally render description based on state */}
               {showDescriptions[index] && (
-                <Typography>
-                  More details about {detail.activity}...
-                </Typography>
+                <Typography>{detail.description}</Typography>
               )}
             </TimelineContent>
           </TimelineItem>
