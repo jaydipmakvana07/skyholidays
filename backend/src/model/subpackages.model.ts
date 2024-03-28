@@ -45,7 +45,7 @@ export const subpackageModel = (sequelize) => {
             },
             pacakge_details: {
                 type: DataTypes.JSONB,
-                allowNull: true,
+                allowNull: false,
             },
         },
         {

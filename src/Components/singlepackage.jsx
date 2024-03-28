@@ -32,7 +32,7 @@ function Singlepackage() {
       ) : (
         packageData.length > 0 ? (
           packageData.map((item, index) => (
-            <Link to={`/citypackage/${item.sub_package_id}`} className="link" key={index}>
+          
               <div className="singlepackageBox">
                 <div className="singlebox">
                   <div className="singleimage">
@@ -57,7 +57,7 @@ function Singlepackage() {
                 </div>
                 <button className="book-now-button">Click here to Book Now</button>
               </div>
-            </Link>
+            
           ))
         ) : (
           <p>No data available</p>

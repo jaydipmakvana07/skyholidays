@@ -58,11 +58,25 @@
     font-weight: bold;
     font-size: 1rem;
   }
+  .description-container h6 {
+     /* Specify desired font family */
+  font-size: 0.9rem; /* Specify desired font size */
+  font-weight: bold;
+  color: rgb(64, 60, 58);/* Specify desired line height */
+  
+  }
   @media screen and (max-width: 450px) {
     .centered-container h5 {
       
       font-size: 1.5rem;
       
     }
+    .description-container h6 {
+      /* Specify desired font family */
+   font-size: 0.8rem; 
+   font-weight: bold;
+   
+   
+   }
     
   }

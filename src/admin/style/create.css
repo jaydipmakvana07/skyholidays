@@ -1,0 +1,80 @@
+/* Tab container */
+.tab-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Align content horizontally at the center */
+}
+
+/* Tab bar */
+.tab-bar {
+  background-color: #f0f0f0; 
+  display: flex;/* Adjust the background color as needed */
+  color: #333; 
+  justify-content: center;
+  width: 100%; /* Ensure full width */
+  display: flex;
+  justify-content: center; 
+  
+  /* Adjust the text color as needed */
+}
+
+
+
+/* Tab bar wrapper */
+.tab-bar-wrapper {
+  width: 30%; /* Adjust width as needed */
+  margin: 0 auto; 
+  display: flex;
+  justify-content: center;
+  /* Center the wrapper horizontally */
+}
+
+
+/* Box styling */
+.formbox {
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+  }
+  .formbox h2{
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  /* Form element styling */
+  .form-label {
+    display: block;
+    
+  }
+  
+  .form-input {
+    width: 100%;
+    padding: 8px;
+    
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  .checkbox-input {
+    display: inline-block;
+    margin-left: 10px;
+  }
+  
+  .submit-button {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .submit-button:hover {
+    background-color: #0056b3;
+  }
+  

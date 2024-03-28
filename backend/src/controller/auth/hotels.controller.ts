@@ -14,11 +14,6 @@ import { TokenController } from '../../config/passport.jwt';
 class HotelsController {
     async create_hotel(req, res, next) {
         try {
-            const {
-                body: {
-                    data: { email, password },
-                },
-            } = req;
             const create_hotel = await db[MODEL.HOTEL].create(req.body.data);
             return sendResponse(res, {
                 responseType: RES_STATUS.CREATE,

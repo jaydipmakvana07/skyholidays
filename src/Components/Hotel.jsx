@@ -32,6 +32,10 @@ function Hotel() {
       );
       setFilteredData(filtered);
       setShowAll(true);
+    } else {
+      // Update filteredData with all the data when search bar is cleared
+      setFilteredData(data);
+      setShowAll(false);
     }
   }, [selectedDestination, data]);
 

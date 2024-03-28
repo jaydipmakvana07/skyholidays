@@ -60,8 +60,8 @@ const RoadmapScreen = () => {
       <Timeline>
         {packageDetails.map((detail, index) => (
           <TimelineItem key={index}>
-            <TimelineOppositeContent sx={{ marginY: '0.5rem' }}>
-              <Typography variant="text" className="timeline-opposite-content">{detail.day}</Typography>
+            <TimelineOppositeContent sx={{ marginY: '0.5rem'}}>
+              <Typography variant="text" className="timeline-opposite-content" >{detail.day}</Typography>
             </TimelineOppositeContent>
             <TimelineSeparator>
               <TimelineDot>
@@ -77,7 +77,11 @@ const RoadmapScreen = () => {
                 {showDescriptions[index] ? <ExpandLessIcon /> : <ExpandMoreIcon />}
               </IconButton>
               {showDescriptions[index] && (
-                <Typography>{detail.description}</Typography>
+                <div className="description-container">
+  
+              
+                <Typography variant="h6" >{detail.description}</Typography>
+                </div>
               )}
             </TimelineContent>
           </TimelineItem>

@@ -1,6 +1,10 @@
 import axios from 'axios';
 
 class SubpackageService {
+    createSubPackage(hotelData) {
+        const url = "http://localhost:5000/api/v1/auth/create-sub-packages";
+        return axios.post(url, hotelData);
+    }
     getSubpackages(title) {
         const url = `http://localhost:5000/api/v1/auth/get-title-sub-packages/${title}`;
         return axios.get(url);

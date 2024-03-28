@@ -7,6 +7,8 @@ import { sendResponse } from '../../utils';
 class SubPackagesController {
     async create_sub_package(req, res, next) {
         try {
+            
+            
             const create_hotel = await db[MODEL.SUB_PACAKGES].create(
                 req.body.data,
             );
@@ -75,7 +77,7 @@ class SubPackagesController {
                 params: { title },
             } = req;
             const get_hotels = await db[MODEL.SUB_PACAKGES].findAll({
-                where: { title: title },
+                where: { subtitle: title },
             });
             return sendResponse(res, {
                 responseType: RES_STATUS.GET,
