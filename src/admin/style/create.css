@@ -8,12 +8,11 @@
 /* Tab bar */
 .tab-bar {
   background-color: #f0f0f0; 
-  display: flex;/* Adjust the background color as needed */
+  /* Adjust the background color as needed */
   color: #333; 
-  justify-content: center;
+  
   width: 100%; /* Ensure full width */
-  display: flex;
-  justify-content: center; 
+   
   
   /* Adjust the text color as needed */
 }
@@ -22,10 +21,9 @@
 
 /* Tab bar wrapper */
 .tab-bar-wrapper {
-  width: 30%; /* Adjust width as needed */
-  margin: 0 auto; 
-  display: flex;
-  justify-content: center;
+  width: 24%; /* Adjust width as needed */
+  
+ 
   /* Center the wrapper horizontally */
 }
 
@@ -77,4 +75,16 @@
   .submit-button:hover {
     background-color: #0056b3;
   }
+  @media screen and (max-width: 450px) {
+    /* Tab bar wrapper */
+  .tab-bar-wrapper {
+    width: 80%; /* Adjust width as needed */
+    
   
+    /* Center the wrapper horizontally */
+  }
+
+
+  
+    
+  }

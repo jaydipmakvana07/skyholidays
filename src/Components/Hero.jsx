@@ -32,7 +32,7 @@ function Hero() {
               <span className={Classes.nickName}>SKY HOLIDAYS</span>
             </h1>
             <p>
-              Save at least 15% on stays worldwide, from relaxing retreats to
+              Save at least 25% on stays worldwide, from relaxing retreats to
               off-grid adventures
             </p>
           </div>
