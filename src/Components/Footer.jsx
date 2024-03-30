@@ -1,7 +1,7 @@
 import React from "react";
 
 import Classes from "../Styles/Footer.module.css";
-import footerLogo from "../assets/footerlogo.jpg";
+import footerLogo from "../assets/skylogo.png";
 
 import facebook from "../assets/facebook.svg";
 import instagram from "../assets/instagram.png";
@@ -28,7 +28,7 @@ function Footer() {
 
         <div className={Classes.footerLogo}>
           <a href="#hero">
-            {/* <img src={footerLogo} alt="" /> */}
+            <img src={footerLogo} alt="" />
             <p>
               SKY <span>HOLIDAYS</span>
             </p>
