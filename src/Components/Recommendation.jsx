@@ -7,38 +7,47 @@ import info2 from "../assets/dining.png";
 import info3 from "../assets/love.gif";
 import PackageService from '../services/packageService';
 import icon from "../assets/search.png";
+import Loader from "./Loader/Loader";
+
 function Recommendation() {
   const [active, setActive] = useState(1); // Default active category index
   const [data, setData] = useState([]); // State to hold package data
   const [searchQuery, setSearchQuery] = useState(""); // State to hold search query
   const [showAll, setShowAll] = useState(false); // State to toggle between showing all and limited packages
+  const [loading, setLoading] = useState(false);
 
   // Function to handle package category change
   const handleCategoryChange = (index) => {
     setActive(index); // Update active category index
+    setLoading(true);
     switch (index) {
       case 1:
         PackageService.getLatestPackages()
           .then(response => setData(response.data.data))
           .catch(error => console.error('Error fetching latest packages:', error));
+        setLoading(false);
         break;
       case 2:
         PackageService.getDomesticPackages()
           .then(response => setData(response.data.data))
           .catch(error => console.error('Error fetching domestic packages:', error));
+        setLoading(false);
         break;
       case 3:
         PackageService.getInternationalPackages()
           .then(response => setData(response.data.data))
           .catch(error => console.error('Error fetching international packages:', error));
+        setLoading(false);
         break;
       case 4:
         PackageService.getWeekendPackages()
           .then(response => setData(response.data.data))
           .catch(error => console.error('Error fetching weekend packages:', error));
+        setLoading(false);
         break;
       default:
         setData([]); // Clear data if no category is selected
+        setLoading(false);
         break;
     }
   };
@@ -64,7 +73,9 @@ function Recommendation() {
   );
 
   return (
-    <section id="recommendation" className="recommendation">
+    <>{loading ? (
+      <><Loader /></>
+    ) : (<><section id="recommendation" className="recommendation">
       <div className="title">
         <h1>Our Packages</h1>
         <div className="CategoryBar">
@@ -82,7 +93,7 @@ function Recommendation() {
           </ul>
         </div>
       </div>
-      
+
       <div className="SearchBarContainer">
         {/* Autocomplete Search Box */}
         <Autocomplete
@@ -99,68 +110,70 @@ function Recommendation() {
             />
 
           )}
-          
+
         />
-          <div className="icon">
-            <img src={icon} alt="search" />
-            </div>
+        <div className="icon">
+          <img src={icon} alt="search" />
+        </div>
       </div>
 
       <div className="recommendationBox">
         {showAll
           ? filteredData.map((item, index) => (
-              <Link to={`/citypackage/${item.title}`} className="link" key={index}>
-                <div className="box">
-                  <div className="image">
-                    <img src={item.imgurl} alt="image" />
-                  </div>
-                  <h3>{item.title}</h3>
-                  <p>{item.subtitle}</p>
-                  <div className="price">
-                    <div>
-                      {item.flight === 1 && <img src={info1} alt="flight icon" />}
-                      {item.food === 1 && <img src={info2} alt="food icon" />}
-                      <img src={info3} alt="food icon" />
-                    </div>
-                    <p>Starting @{item.cost} ₹</p>
-                  </div>
-                  <div className="details">
-                    <p>{item.duration}</p>
-                    <p>PER PAX</p>
-                  </div>
+            <Link to={`/citypackage/${item.title}`} className="link" key={index}>
+              <div className="box">
+                <div className="image">
+                  <img src={item.imgurl} alt="image" />
                 </div>
-              </Link>
-            ))
+                <h3>{item.title}</h3>
+                <p>{item.subtitle}</p>
+                <div className="price">
+                  <div>
+                    {item.flight === 1 && <img src={info1} alt="flight icon" />}
+                    {item.food === 1 && <img src={info2} alt="food icon" />}
+                    <img src={info3} alt="food icon" />
+                  </div>
+                  <p>Starting @{item.cost} ₹</p>
+                </div>
+                <div className="details">
+                  <p>{item.duration}</p>
+                  <p>PER PAX</p>
+                </div>
+              </div>
+            </Link>
+          ))
           : filteredData.slice(0, 6).map((item, index) => (
-              <Link to={`/citypackage/${item.title}`} className="link" key={index}>
-                <div className="box">
-                  <div className="image">
-                    <img src={item.imgurl} alt="image" />
-                  </div>
-                  <h3>{item.title}</h3>
-                  <p>{item.subtitle}</p>
-                  <div className="price">
-                    <div>
-                      {item.flight === 1 && <img src={info1} alt="flight icon" />}
-                      {item.food === 1 && <img src={info2} alt="food icon" />}
-                      <img src={info3} alt="food icon" />
-                    </div>
-                    <p>Starting @{item.cost} ₹</p>
-                  </div>
-                  <div className="details">
-                    <p>{item.duration}</p>
-                    <p>PER PAX</p>
-                  </div>
+            <Link to={`/citypackage/${item.title}`} className="link" key={index}>
+              <div className="box">
+                <div className="image">
+                  <img src={item.imgurl} alt="image" />
                 </div>
-              </Link>
-            ))}
+                <h3>{item.title}</h3>
+                <p>{item.subtitle}</p>
+                <div className="price">
+                  <div>
+                    {item.flight === 1 && <img src={info1} alt="flight icon" />}
+                    {item.food === 1 && <img src={info2} alt="food icon" />}
+                    <img src={info3} alt="food icon" />
+                  </div>
+                  <p>Starting @{item.cost} ₹</p>
+                </div>
+                <div className="details">
+                  <p>{item.duration}</p>
+                  <p>PER PAX</p>
+                </div>
+              </div>
+            </Link>
+          ))}
       </div>
       <div className="viewMoreButtonContainer">
         <button className="viewMoreButton" onClick={() => setShowAll(!showAll)}>
           {showAll ? "View Less Packages" : "View All Packages"}
         </button>
       </div>
-    </section>
+    </section></>)}
+
+    </>
   );
 }
 

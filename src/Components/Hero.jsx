@@ -9,21 +9,24 @@ function Hero() {
 
   return (
     <>
-      <div className={!modal && Classes.open}>
+      {modal ? (<><div className={!modal && Classes.open}>
         <div className={Classes.modalContainer}>
           <h5>We Have Received your Information</h5>
 
           <button onClick={() => setModal(false)}>Ok</button>
         </div>
-      </div>
+      </div></>) : (<></>)
+
+      }
+
 
       <section id="hero" className={Classes.heroContainer}>
-      <div className={Classes.heroVideo}>
-        <video autoPlay loop muted className={Classes.video}>
-          <source src={BannerVideo} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </div>
+        <div className={Classes.heroVideo}>
+          <video autoPlay loop muted className={Classes.video}>
+            <source src={BannerVideo} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
 
         <div className={Classes.content}>
           <div className={Classes.title}>
@@ -50,12 +53,12 @@ function Hero() {
 
             <div className={Classes.search}>
               <label>Your Name</label>
-              <input type="text" placeholder="your name"/>
+              <input type="text" placeholder="your name" />
             </div>
-            
+
             <div className={Classes.search}>
               <label>Contact Number</label>
-              <input type="text" placeholder="+9876543210"/>
+              <input type="text" placeholder="+9876543210" />
             </div>
 
             <button onClick={() => setModal(true)}>book now</button>
