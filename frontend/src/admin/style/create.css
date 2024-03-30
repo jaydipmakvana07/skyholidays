@@ -5,27 +5,30 @@
   align-items: center; /* Align content horizontally at the center */
 }
 
+/* Tab bar wrapper */
+.tab-bar-wrapper {
+  display: flex;
+  justify-content: center; /* Center the tabs horizontally */
+}
+
 /* Tab bar */
 .tab-bar {
   background-color: #f0f0f0; 
   /* Adjust the background color as needed */
   color: #333; 
   
-  width: 100%; /* Ensure full width */
-   
-  
-  /* Adjust the text color as needed */
+  /* Remove width property */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  white-space: nowrap; /* Prevent tabs from wrapping */
+  -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
+}
+
+/* Individual tab */
+.MuiTab-root {
+  min-width: 120px; /* Set a minimum width for each tab */
 }
 
 
-
-/* Tab bar wrapper */
-.tab-bar-wrapper {
-  width: 24%; /* Adjust width as needed */
-  
- 
-  /* Center the wrapper horizontally */
-}
 
 
 /* Box styling */
