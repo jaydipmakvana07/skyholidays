@@ -13,7 +13,7 @@ function Footer() {
       <div className={Classes.footer}>
         <div className={Classes.socialLink}>
           <p>+91 7043604421</p>
-          <p>+91 7043384421</p>
+          <p>+91 9558284055</p>
           <p>skyholidays2023@gmail.com</p>
           <a href="https://www.facebook.com/people/Sky-Holiday/pfbid02VRk4ZMWFDkf6D2CBMSDG6eWj5RZneVGeBNzJJL1NGa8HwJGnGr76dAqAzXkXifsQl/?mibextid=ZbWKwL">
             <img src={facebook} alt="" />
@@ -37,22 +37,10 @@ function Footer() {
 
         <div className={Classes.footerInfo}>
           <div>
-          
-          <h2>
-          
-            Office Address</h2>
+            <h2>Office Address</h2>
           </div>
-          
-    
-         
-            
-          <p>
-          
-            B-904, Time Square 2, Sindhubhavan Road, Ahmedabad
-          </p>
-          
 
-          
+          <p>B-904, Time Square 2, Sindhubhavan Road, Ahmedabad</p>
         </div>
       </div>
     </footer>

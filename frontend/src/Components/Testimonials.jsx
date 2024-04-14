@@ -17,7 +17,6 @@ function Testimonials() {
       <div className={Classes.boxContainer}>
         <div className={Classes.testimonialBox}>
           <FontAwesomeIcon icon={faQuoteLeft} className={Classes.Icon} />
-          
 
           <div className={Classes.info}>
             <img src={avatar} alt="image" />
@@ -29,8 +28,6 @@ function Testimonials() {
           </div>
         </div>
 
-        
-
         <div className={Classes.testimonialBox}>
           <FontAwesomeIcon icon={faQuoteLeft} className={Classes.Icon} />
 
@@ -39,7 +36,7 @@ function Testimonials() {
             <div>
               <h3>Yash Chauhan</h3>
               <span>CEO • sky holidays</span>
-              <p>+91 7043384421</p>
+              <p>+91 9558284055</p>
             </div>
           </div>
         </div>

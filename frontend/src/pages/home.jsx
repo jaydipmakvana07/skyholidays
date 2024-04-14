@@ -8,8 +8,10 @@ import Hero from "../Components/Hero";
 import Recommendation from "../Components/Recommendation";
 import Hotel from "../Components/Hotel";
 import Classes from "../Styles/Footer.module.css";
+import { getApiUrl } from "../helpers/helper";
 
 function Home() {
+  console.log("getApiUrl", getApiUrl());
   return (
     <div className={Classes.app}>
       <ScrollToTop />
